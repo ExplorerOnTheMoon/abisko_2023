@@ -124,10 +124,10 @@ Details:
 
 ## (17-aug) Day 5 (Plan B)
 
-The plan kicks in if we don't get accomodation at Abisko on the night of the 17th. In this case, we assume that we will have civil twilight in the am from 3:00 Hrs.
+The plan kicks in if we don't get accomodation at Abisko on the night of the 17th. In this case, we assume that we will have civil twilight in the am from 02:40 Hrs.
 
 Target:    Get past Kieron Checkpoint, past Abisko National Park & to Abisko --> (Hike 4 miles / cumulative 59 miles)
-Timing:    Hiking for 8 Hrs
+Timing:    Hiking for 2 Hrs
 Note:      Dry spell.
 Questions: What if there is an emergency and I need to set up camp?
 Details:
