@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>hike_plan.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="abisko-hike">abisko hike</h1>
+<ul>
+<li><a href="#abisko-hike">abisko hike</a>
+<ul>
+<li><a href="#13-aug-day-1-sunday">(13-aug) day 1 (sunday)</a></li>
+<li><a href="#14-aug-day-2-monday">(14-aug) day 2 (monday)</a></li>
+<li><a href="#15-aug-day-3-tuesday">(15-aug) day 3 (tuesday)</a></li>
+<li><a href="#16-aug-day-4-wednesday">(16-aug) day 4 (wednesday)</a></li>
+<li><a href="#17-aug-day-5">(17-aug) Day 5</a></li>
+<li><a href="#17-aug-day-5-plan-b">(17-aug) Day 5 (Plan B)</a>
+<ul>
+<li><a href="#18-aug-day-6-plan-b">(18-aug) Day 6 (Plan B)</a></li>
+</ul>
+</li>
+<li><a href="#17-aug-day-5-plan-c">(17-aug) Day 5 (Plan C)</a>
+<ul>
+<li><a href="#18-aug-day-6-plan-c">(18-aug) Day 6 (Plan C)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="13-aug-day-1-sunday">(13-aug) day 1 (sunday)</h2>
+<pre class="hljs"><code><div><span class="hljs-attr">target:</span>
+  <span class="hljs-attr">distance:</span>
+    <span class="hljs-attr">day:</span> <span class="hljs-number">15.6</span> <span class="hljs-string">miles</span>
+      <span class="hljs-attr">breakdown:</span>
+        <span class="hljs-attr">hike:</span> <span class="hljs-number">12.6</span> <span class="hljs-string">miles</span>
+        <span class="hljs-attr">ferry:</span> <span class="hljs-number">3.0</span> <span class="hljs-string">miles</span>
+    <span class="hljs-attr">cumulative:</span> <span class="hljs-number">15.6</span> <span class="hljs-string">miles</span>
+    <span class="hljs-attr">landmarks / notes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">lake</span> <span class="hljs-string">ladtojaure</span> <span class="hljs-string">at</span> <span class="hljs-number">3.1</span> <span class="hljs-string">miles</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">kebnekaise</span> <span class="hljs-string">station</span> <span class="hljs-string">at</span> <span class="hljs-number">11.5</span> <span class="hljs-string">miles</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">we</span> <span class="hljs-string">are</span> <span class="hljs-string">going</span> <span class="hljs-number">4</span> <span class="hljs-string">miles</span> <span class="hljs-string">past</span> <span class="hljs-string">the</span> <span class="hljs-string">station</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">hard</span> <span class="hljs-string">last</span> <span class="hljs-number">4</span> <span class="hljs-string">miles</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">ideal</span> <span class="hljs-string">target</span> <span class="hljs-string">is</span> <span class="hljs-number">16.5</span> <span class="hljs-string">miles</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">ferry</span> <span class="hljs-string">at</span> <span class="hljs-string">lake</span> <span class="hljs-string">ladtojaure</span> <span class="hljs-string">in</span> <span class="hljs-string">cash</span> <span class="hljs-string">(not</span> <span class="hljs-string">sure</span> <span class="hljs-string">if</span> <span class="hljs-string">skr</span> <span class="hljs-string">or</span> <span class="hljs-string">usd)</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">11.6 miles:</span> <span class="hljs-string">kebnekaise</span> <span class="hljs-string">station</span>
+
+<span class="hljs-attr">timing:</span>
+  <span class="hljs-attr">moving:</span>
+    <span class="hljs-attr">speed:</span> <span class="hljs-number">2</span> <span class="hljs-string">mph</span> <span class="hljs-string">and</span> <span class="hljs-string">then</span> <span class="hljs-number">1</span> <span class="hljs-string">mph</span>
+    <span class="hljs-attr">start:</span> <span class="hljs-number">07</span><span class="hljs-string">:30</span> <span class="hljs-string">Hrs</span>
+    <span class="hljs-attr">end:</span> <span class="hljs-number">06</span><span class="hljs-string">:00</span> <span class="hljs-string">Hrs</span>
+    <span class="hljs-attr">total:</span> <span class="hljs-string">2h</span> <span class="hljs-string">+</span> <span class="hljs-string">2h</span> <span class="hljs-string">+</span> <span class="hljs-string">1h</span> <span class="hljs-string">+</span> <span class="hljs-string">2h</span> <span class="hljs-string">=</span> <span class="hljs-number">7</span> <span class="hljs-string">hours</span>
+  <span class="hljs-attr">resting:</span> <span class="hljs-string">1h</span> <span class="hljs-string">+</span> <span class="hljs-string">1h</span> <span class="hljs-string">+</span> <span class="hljs-string">30m</span> <span class="hljs-string">+</span> <span class="hljs-string">15m</span> <span class="hljs-string">+</span> <span class="hljs-string">15m</span> <span class="hljs-string">=</span> <span class="hljs-string">3h</span>
+
+<span class="hljs-attr">details:</span> <span class="hljs-string">|-
+  - 05:00 Hrs: --&gt; wake up, shower, shave
+  - 05:45 Hrs: 🍽️ breakfast
+  - 06:30 Hrs: dynamic stretching, theragun
+  - 07:00 Hrs: 🚌 head out to Fjallraven Starting point for the bus
+  - 07:30 Hrs: 🚶‍♂️ start hiking (@2mph)
+  - 09:30 Hrs: === arrive at lake ladtojaure (day: 3 miles; total: 3 miles)
+  - 10:00 Hrs: # 30 mins of grace (you might have to wait in the queue)
+  - 10:30 Hrs: ⛵ end ferry (day: 6 miles; total: 6 miles) hike for 2 hours (@2mph)
+  - 12:30 Hrs: # (day: 10 miles; total: 10 miles) 🍽️ lunch + massage legs and air out feet (hope it's not raining!)
+  - 13:30 Hrs: 🚶‍♂️ hike: (@2mph)
+  - 14:30 Hrs: # === reach kebnekaise station (day: 11.6 miles; total: 11.6 miles) use toilet if necessary
+  - 15:00 Hrs: 🚶‍♂️ hike: (rough terrain begins) (@1mph)
+  - 17:00 Hrs: # (day: 13.6 miles; total: 13.6 miles) rest
+  - 17:15 Hrs: 🚶‍♂️ hike: (rough terrain) (@1mph) 
+  - 19:15 Hrs: # (day: 15.6 miles; total: 15.6 miles) rest
+  - 19:30 Hrs: 🚶‍♂️ hike: find a nice campsite (rough terrain) (@1mph)
+  - 20:00 Hrs: &lt;-- finish for the day: tent, 🍽️ dinner, static stretch, rest, massage, sleep
+</span></div></code></pre>
+<h2 id="14-aug-day-2-monday">(14-aug) day 2 (monday)</h2>
+<pre class="hljs"><code><div><span class="hljs-attr">target:</span>
+  <span class="hljs-attr">distance:</span>
+    <span class="hljs-attr">day:</span> <span class="hljs-number">10</span> <span class="hljs-string">miles</span>
+    <span class="hljs-attr">cumulative:</span> <span class="hljs-number">25.6</span> <span class="hljs-string">miles</span>
+  <span class="hljs-attr">landmarks / notes:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">get</span> <span class="hljs-string">as</span> <span class="hljs-string">close</span> <span class="hljs-string">to</span> <span class="hljs-string">Salka</span> <span class="hljs-string">as</span> <span class="hljs-string">possible</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">20 miles:</span> <span class="hljs-string">singi</span> <span class="hljs-string">checkpoint</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">27.6 miles:</span> <span class="hljs-string">salka</span> <span class="hljs-string">checkpoint</span>
+
+<span class="hljs-attr">timing:</span>
+  <span class="hljs-attr">moving:</span>
+    <span class="hljs-attr">speed:</span> <span class="hljs-number">1</span> <span class="hljs-string">mph</span> <span class="hljs-string">to</span> <span class="hljs-number">1.5</span> <span class="hljs-string">mph</span>
+    <span class="hljs-attr">start:</span> <span class="hljs-number">06</span><span class="hljs-string">:00</span> <span class="hljs-string">Hrs</span>
+    <span class="hljs-attr">end:</span> <span class="hljs-number">05</span><span class="hljs-string">:00</span> <span class="hljs-string">Hrs</span>
+    <span class="hljs-attr">total:</span> <span class="hljs-string">2h</span> <span class="hljs-string">+</span> <span class="hljs-string">2h</span> <span class="hljs-string">+</span> <span class="hljs-string">1h30m</span> <span class="hljs-string">+</span> <span class="hljs-string">2h</span> <span class="hljs-string">+</span> <span class="hljs-string">1h15m</span> <span class="hljs-string">=</span> <span class="hljs-string">8h45m</span>
+  <span class="hljs-attr">resting:</span> <span class="hljs-string">30m</span> <span class="hljs-string">+</span> <span class="hljs-string">30m</span> <span class="hljs-string">+</span> <span class="hljs-string">1h</span> <span class="hljs-string">+</span> <span class="hljs-string">15m</span> <span class="hljs-string">=</span> <span class="hljs-string">2h15m</span>
+
+<span class="hljs-attr">details:</span> <span class="hljs-string">|-
+  - 05:00 Hrs: --&gt; wakeup, 🍽️ cook breakfast in cozy, pack tent, dynamic stretch
+  - 06:00 Hrs: 🚶‍♂️ hike: (rough terrain): (@1mph)
+  - 08:00 Hrs: # (day: 2 miles; total: 17.6 miles) rest
+  - 08:30 Hrs: 🚶‍♂️ hike: (rough terrain): (@1mph)
+  - 10:30 Hrs: # (day: 4 miles; total: 19.6 miles) rest
+  - 11:00 Hrs: 🚶‍♂️ hike: (rough terrain): (@1mph)
+  - 12:30 Hrs: # === (day: 5.5 miles; total: 21.1 miles) reach singi checkpoint, 🍽️ lunch + rest
+  - 13:30 Hrs: 🚶‍♂️ hike: (rough terrain): (@1.5mph)
+  - 15:30 Hrs: # (day: 8.5 miles; total: 24.1 miles) rest
+  - 15:45 Hrs: 🚶‍♂️ hike: (rough terrain): (@1.5mph)
+  - 17:00 Hrs: &lt;-- (day: 10 miles; total: 25.6 miles) tent, 🍽️ dinner, static stretch, rest, massage, sleep
+</span></div></code></pre>
+<p>Target:    Get as close to Salka as possible --&gt; (<span style="color:blue">Hike 12 miles / cumulative 26.5 miles</span>)
+Timing:    Hiking for 9 Hrs.
+Note:      <span style="color:tomato">Hard first 5.5 miles.</span><span style="color:MediumSeaGreen">(The more you cover here, the better; min 1/2 way to Salka; the closer, the better)</span>
+Questions: None
+Details:</p>
+<ul>
+<li>Wake up at 05:00 Hrs.</li>
+<li>Start hiking at 06:00 Hrs.</li>
+<li>Hike the hard miles in 3.5 to 4 hours (<span style="color:blue">5.5 miles done</span>)</li>
+<li>2 hours and 30 mins to enjoy the scenery wherever you need to!</li>
+<li>Reach Singi Checkpoint by 12:00 Hrs. (<span style="color:blue">5.8 miles done</span>)
+<ul>
+<li>Eat some stuff if they provide it (Flatbread with wild mushrooms, mashed potatoes, and jam)</li>
+<li>Lunch at Singi; only 6 miles to go for the day</li>
+<li>Rest at Singi for 1 hour; massage your feet and ankles</li>
+</ul>
+</li>
+<li>Start hiking by 13:00 Hrs.</li>
+<li>Hike for 3 more hours and see how much you can cover (<span style="color:blue">12 miles done</span>)</li>
+<li>2 hours to enjoy the scenery wherever you need to!</li>
+<li>Tent at 17:00 Hrs.
+<ul>
+<li>Rest well; massage</li>
+</ul>
+</li>
+</ul>
+<h2 id="15-aug-day-3-tuesday">(15-aug) day 3 (tuesday)</h2>
+<pre class="hljs"><code><div><span class="hljs-attr">target:</span>
+  <span class="hljs-attr">distance:</span>
+    <span class="hljs-attr">day:</span> <span class="hljs-number">12.5</span> <span class="hljs-string">miles</span>
+    <span class="hljs-attr">cumulative:</span> <span class="hljs-number">36.1</span> <span class="hljs-string">miles</span>
+  <span class="hljs-attr">landmarks / notes:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">27.6 miles:</span> <span class="hljs-string">salka</span> <span class="hljs-string">checkpoint</span> <span class="hljs-string">(outhouses</span> <span class="hljs-string">available;</span> <span class="hljs-string">shop</span> <span class="hljs-string">available</span> <span class="hljs-string">with</span> <span class="hljs-string">crackers</span> <span class="hljs-string">&amp;</span> <span class="hljs-string">soda;</span> <span class="hljs-string">freshwater</span> <span class="hljs-string">streams)</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">33.1 miles:</span> <span class="hljs-string">tjaktjapass</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">36.1 miles:</span> <span class="hljs-string">tjaktja</span> <span class="hljs-string">checkpoint</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">43.0 miles:</span> <span class="hljs-string">alesjaure</span> <span class="hljs-string">checkpoint</span>
+
+<span class="hljs-attr">timing:</span>
+  <span class="hljs-attr">moving:</span>
+    <span class="hljs-attr">speed:</span> <span class="hljs-number">2</span> <span class="hljs-string">mph</span> <span class="hljs-string">and</span> <span class="hljs-string">then</span> <span class="hljs-number">1</span> <span class="hljs-string">mph</span> <span class="hljs-string">to</span> <span class="hljs-number">1.5</span> <span class="hljs-string">mph</span>
+    <span class="hljs-attr">start:</span> <span class="hljs-number">06</span><span class="hljs-string">:00</span> <span class="hljs-string">Hrs</span>
+    <span class="hljs-attr">end:</span> <span class="hljs-number">05</span><span class="hljs-string">:00</span> <span class="hljs-string">Hrs</span>
+    <span class="hljs-attr">total:</span> <span class="hljs-string">2h</span> <span class="hljs-string">+</span> <span class="hljs-string">2h</span> <span class="hljs-string">+</span> <span class="hljs-string">1h30m</span> <span class="hljs-string">+</span> <span class="hljs-string">1h</span> <span class="hljs-string">=</span> <span class="hljs-string">6h30m</span>
+  <span class="hljs-attr">resting:</span> <span class="hljs-string">1h15m</span> <span class="hljs-string">+</span> <span class="hljs-string">30m</span> <span class="hljs-string">+</span> <span class="hljs-string">30m</span> <span class="hljs-string">+</span> <span class="hljs-string">30m</span> <span class="hljs-string">=</span> <span class="hljs-string">2h45m</span>
+
+<span class="hljs-attr">details:</span> <span class="hljs-string">|-
+  - 05:00 Hrs: --&gt; wakeup, no breakfast; just energy bars, pack tent, dynamic stretch
+  - 05:45 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@2mph)
+  - 07:45 Hrs: # === (day: 4 miles; total: 27.6 miles) reached salka; sauna + heavy breakfast + rest + water refill
+  - 09:00 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@2mph)
+  - 11:00 Hrs: # (day: 8 miles; total: 31.6 miles) rest
+  - 11:30 Hrs: 🚶‍♂️ hike: (rough terrain) (@1.5mph)
+  - 13:00 Hrs: # === (day: 9.5 miles; total: 33.1 miles) reach tjaktjapass, 🍽️ lunch + rest
+  - 13:30 Hrs: 🚶‍♂️ hike: (downhill + tough terrain): (@1.5mph)
+  - 15:30 Hrs: # (day: 11.5 miles; total: 35.1 miles) rest
+  - 16:00 Hrs: 🚶‍♂️ hike: (downhill + rough terrain): (@1 mph)
+  - 17:00 Hrs: # === (day: 12.5 miles; total: 36.1 miles) reach tjaktja checkpoint rest, 🍽️ snacks (coffee + carrot cake + hot sandwiches if available) (plan on having tea :))
+  - 17:30 Hrs: 🚶‍♂️ hike: to find a nice campsite (rough terrain)
+  - 18:00 Hrs: &lt;-- tent, 🍽️ dinner, static stretch, rest, massage, sleep
+</span></div></code></pre>
+<p>Target:    Get past Salka Checkpoint, past Tjajkapasset, past Tjakja Checkpoint --&gt; (Hike 14 miles / cumulative 40.5 miles)
+Timing:    Hiking for 9 Hrs
+Note:      Longest and steepest hiking today. Descend after mile 33.
+Questions: None
+Details:</p>
+<ul>
+<li>Wake up at 05:00 Hrs</li>
+<li>Start hiking at 06:00 Hrs</li>
+<li>Hike for 30 mins and hit Salka Checkpoint (<span style="color:blue">27.3-mile marker; 0.8 miles done</span>) (Will start getting colder)</li>
+<li>Hike for 2 hours and 30 mins and arrive at Tjajkapasset (pre-Tjajka checkpoint) (<span style="color:blue">33.3-mile marker;  6 miles done</span>)</li>
+<li>Rest for 1 hour; it's now 10:00 Hrs. Massage your feet! (get ready for descent and boulder fields)</li>
+<li>Hike for 2 hours; reach Tjajka Checkpoint by 12:00 Hrs. (<span style="color:blue">36-mile marker; 9 miles done</span>)</li>
+<li>Lunch break for 1 hour. (enjoy Coffee and Carrot Cake)</li>
+<li>Start hiking at 13:00 Hrs.</li>
+<li>Hike for 4 more hours (with a 1-hour rest in there for pics etc) covering 5.5 miles (<span style="color:blue">14 miles done</span>)</li>
+<li>Tent at 17:00
+<ul>
+<li>Rest well; massage</li>
+</ul>
+</li>
+</ul>
+<h2 id="16-aug-day-4-wednesday">(16-aug) day 4 (wednesday)</h2>
+<pre class="hljs"><code><div><span class="hljs-attr">target:</span>
+  <span class="hljs-attr">distance:</span>
+    <span class="hljs-attr">day:</span> <span class="hljs-number">16.0</span> <span class="hljs-string">miles</span>
+      <span class="hljs-attr">breakdown:</span>
+        <span class="hljs-attr">hike:</span> <span class="hljs-number">12.5</span> <span class="hljs-string">miles</span>
+        <span class="hljs-attr">ferry:</span> <span class="hljs-number">3.5</span> <span class="hljs-string">miles</span>
+    <span class="hljs-attr">cumulative:</span> <span class="hljs-number">52.1</span> <span class="hljs-string">miles</span>
+  <span class="hljs-attr">landmarks / notes:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">43.0 miles:</span> <span class="hljs-string">alesjaure</span> <span class="hljs-string">checkpoint</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">60.1 miles:</span> <span class="hljs-string">kieron</span> <span class="hljs-string">checkpoint</span>
+
+<span class="hljs-attr">timing:</span>
+  <span class="hljs-attr">moving:</span>
+    <span class="hljs-attr">speed:</span> <span class="hljs-number">2</span> <span class="hljs-string">mph</span>
+    <span class="hljs-attr">start:</span> <span class="hljs-number">06</span><span class="hljs-string">:00</span> <span class="hljs-string">Hrs</span>
+    <span class="hljs-attr">end:</span> <span class="hljs-number">05</span><span class="hljs-string">:00</span> <span class="hljs-string">Hrs</span>
+    <span class="hljs-attr">total:</span> <span class="hljs-string">2h</span> <span class="hljs-string">+</span> <span class="hljs-number">2</span> <span class="hljs-string">+</span> <span class="hljs-number">1</span> <span class="hljs-string">+</span> <span class="hljs-number">2</span> <span class="hljs-string">=</span> <span class="hljs-number">7</span> <span class="hljs-string">hours</span>
+  <span class="hljs-attr">resting:</span> <span class="hljs-string">30m</span> <span class="hljs-string">+</span> <span class="hljs-string">2h</span> <span class="hljs-string">+</span> <span class="hljs-string">30m</span> <span class="hljs-string">=</span> <span class="hljs-string">3h</span>
+
+<span class="hljs-attr">details:</span> <span class="hljs-string">|-
+  - 05:00 Hrs: --&gt; wakeup, breakfast, pack tent, dynamic stretch
+  - 06:00 Hrs: start hiking (terrain isn't too bad) (@2mph)
+  - 08:00 Hrs: # (day: 4 miles; total: 40.1 miles) rest + water refill
+  - 08:30 Hrs: start hiking (terrain isn't too bad) (@1.5mph)
+  - 10:30 Hrs: # === (day: 7 miles; total: 43.0 miles) reach alesjaure checkpoint; sauna + bath + relax + recuperate + lunch
+  - 12:30 Hrs: take ferry to save 3.5 miles
+  - 13:00 Hrs: end ferry (day: 10.5 miles; total: 46.5 miles)
+  - 13:15 Hrs: start hiking (terrain isn't too bad) (@2mph)
+  - 15:15 Hrs: # (day: 14.5 miles; total: 50.5 miles) rest + water refill
+  - 15:45 Hrs: start hiking (terrain isn't too bad) (@2mph)
+  - 16:45 Hrs: # (day: 16.5 miles; total: 54.5 miles) find a nice campsite
+  - 17:00 Hrs: &lt;-- tent, dinner, static stretch, rest, massage, sleep
+</span></div></code></pre>
+<p>Target:    Get past Alesjaure Checkpoint; &amp; halfway / just before Kieron Checkpoint --&gt; (Hike 11 miles, Ferry 3.5 miles / cumulative 55 miles)
+Timing:    Hiking for 8 Hrs
+Note:      Easy hiking.
+Questions: Do I need to pay for the ferry in cash (is it in SKR or USD)?
+Details:</p>
+<ul>
+<li>Wake up at 05:00 Hrs</li>
+<li>Start hiking at 06:00 Hrs</li>
+<li>Hike for 2 hours and hit Alesjaure Checkpoint (<span style="color:blue">43-mile marker; 2.5 miles done</span>)
+<ul>
+<li>Buy snacks and soda</li>
+<li>Sauna + icy rinse in the river + hot water bath</li>
+<li>Fresh pair of undies!</li>
+<li>Spend 1 hour 30 mins over here</li>
+</ul>
+</li>
+<li>10:00 take the boat for 5.7 km (<span style="color:blue">3.5 miles on the boat; 6 miles done</span>)</li>
+<li>11:00 offboard from the boat</li>
+<li>Hike for 2 hours (<span style="color:blue">10 miles done</span>)</li>
+<li>13:00 Hrs; take lunch. Dip feet in a stream and massage those feet!</li>
+<li>Start hiking at 14:00 Hrs; hike for 2 more hours (<span style="color:blue">14 miles done</span>)</li>
+<li>Rest for 30 mins or spend time taking pics etc</li>
+<li>Hike for 30 more mins for about 0.5 miles (<span style="color:blue">55-mile marker; 14.5 miles done</span>)</li>
+<li>Stay before Kieron. There is no camping allowed after Kieron.</li>
+<li>Tent at 17:00
+<ul>
+<li>Rest well; massage</li>
+</ul>
+</li>
+</ul>
+<h2 id="17-aug-day-5">(17-aug) Day 5</h2>
+<p>Target:    Get past Kieron Checkpoint, past Abisko National Park &amp; to Abisko --&gt; (Hike 14.5 miles / cumulative 70 miles)
+Timing:    Hiking for 8 Hrs
+Note:      Dry spell.
+Questions: What if there is an emergency and I need to set up camp?
+Details:</p>
+<ul>
+<li>Wake up at 05:00 Hrs</li>
+<li>Start hiking at 06:00 Hrs</li>
+<li>Dry patch coming up. Hydrate!
+<ul>
+<li>Fill up 2L of water + 1L in the BeFree bladder</li>
+</ul>
+</li>
+<li>Hike for 2 hours to reach Kieron Checkpoint at 08:30 Hrs. (30 mins grace period for pics etc) (<span style="color:blue">60-mile marker; 4 miles done</span>)
+<ul>
+<li>Turn right at the sign towards the bridge; the checkpoint is at the end of a steep descent &amp; past the bridge.</li>
+</ul>
+</li>
+<li>Enjoy freshly made pancakes with cream and strawberry jam; (30 mins break). Massage those feet!</li>
+<li>09:00 Hrs. Start hiking; hike for 2 hours (<span style="color:blue">8 miles done</span>)</li>
+<li>11:00 Hrs. rest, and have a light lunch/snack</li>
+<li>12:00 Hrs. start hiking; hike for 2 hours (<span style="color:blue">12 miles done</span>)</li>
+<li>14:00 Hrs. rest for 30 mins</li>
+<li>14:30 start hiking for 2 hours (30 mins grace) (<span style="color:blue">14.5 miles done; all done!</span>)</li>
+</ul>
+<h2 id="17-aug-day-5-plan-b">(17-aug) Day 5 (Plan B)</h2>
+<p>The plan kicks in if we don't get accomodation at Abisko on the night of the 17th. In this case, we assume that we will have civil twilight in the am from 02:40 Hrs.</p>
+<p>Target:    Get past Kieron Checkpoint, past Abisko National Park &amp; to Abisko --&gt; (Hike 4 miles / cumulative 59 miles)
+Timing:    Hiking for 2 Hrs
+Note:      Dry spell.
+Questions: What if there is an emergency and I need to set up camp?
+Details:</p>
+<ul>
+<li>Wake up at whenever, rest relax and recuperate. Take a cool dip at one of those cool streams. Cleanup; have a chilled out breakfast.</li>
+<li>Rest till 10:00 Hrs.</li>
+<li>Start hiking at 10:30 Hrs. and hike for 3 miles (1 mile before Kieron checkpoint). (<span style="color:blue">59-mile marker; 3 miles done</span>)</li>
+<li>Tent near a water source.
+<ul>
+<li>Rest the whole day till the evening at 02:00 Hrs on the 18-Aug-2023.</li>
+</ul>
+</li>
+</ul>
+<h3 id="18-aug-day-6-plan-b">(18-aug) Day 6 (Plan B)</h3>
+<p>The plan kicks in if we don't get accomodation at Abisko on the night of the 17th. In this case, we assume that we will have civil twilight in the am from 3:00 Hrs.</p>
+<p>Target:    Get past Kieron Checkpoint, past Abisko National Park &amp; to Abisko --&gt; (Hike 12 miles / cumulative 70 miles)
+Timing:    Hiking for 8 Hrs
+Note:      Dry spell.
+Questions: What if there is an emergency and I need to set up camp?
+Details:</p>
+<ul>
+<li>Wake up at 2:00 Hrs. Have a great breakfast. Potty!</li>
+<li>Dry patch coming up. Hydrate!
+<ul>
+<li>Fill up 2L of water + 1L in the BeFree bladder (Nautical Twilight)</li>
+</ul>
+</li>
+<li>Start hiking at 03:20 Hrs (Civil Twilight at 03:26 Hrs.)</li>
+<li>Hike for 30 mins to reach Kieron Checkpoint at 04:00 Hrs. (15 mins grace period for pics etc) (<span style="color:blue">60-mile marker; 1 mile done</span>)
+<ul>
+<li>Turn right at the sign towards the bridge; the checkpoint is at the end of a steep descent &amp; past the bridge.</li>
+</ul>
+</li>
+<li><em>Do not - Enjoy freshly made pancakes with cream and strawberry jam; (30 mins break). Massage those feet!</em></li>
+<li>04:30 Hrs. Hike for 2 hours covering 4 miles (15 mins grace)</li>
+<li>06:45 Hrs. Rest, and have a light lunch/snack (<span style="color:blue">64-mile marker; 5 miles done</span>)</li>
+<li>07:00 Hrs. Start hiking; hike for 2 hours covering 3 miles (15 mins grace)</li>
+<li>09:00 Hrs. Rest for 15 mins (<span style="color:blue">67-mile marker; 8 miles done</span>)</li>
+<li>09:15 Hrs. Start hiking for 2 hours (30 mins grace)(<span style="color:blue">4 miles to go!</span>)</li>
+<li>11:15 Hrs. The end!(<span style="color:blue">12 miles done; all done!</span>)</li>
+</ul>
+<h2 id="17-aug-day-5-plan-c">(17-aug) Day 5 (Plan C)</h2>
+<p>The plan kicks in if we don't get accomodation at Abisko on the night of the 17th. This can also be used if we have water at Nissanjåkk in Abisko National Park.
+In this case, we assume that we can hike in civil twilight in the am from 3:00 Hrs.</p>
+<p>Target:    Get past Kieron Checkpoint, past Abisko National Park &amp; to Abisko --&gt; (Hike 11.5 miles / cumulative 67 miles)
+Timing:    Hiking for 8 Hrs
+Note:      Dry spell.
+Questions: What if there is an emergency and I need to set up camp?
+Details:</p>
+<ul>
+<li>Wake up at 05:00 Hrs</li>
+<li>Start hiking at 06:00 Hrs</li>
+<li>Dry patch coming up. Hydrate!
+<ul>
+<li>Fill up 3L of water + 1L in the BeFree bladder</li>
+</ul>
+</li>
+<li>Hike for 2 hours to reach Kieron Checkpoint at 08:30 Hrs. (30 mins grace period for pics etc) (<span style="color:blue">60-mile marker; 4 miles done</span>)
+<ul>
+<li>Turn right at the sign towards the bridge; the checkpoint is at the end of a steep descent &amp; past the bridge.</li>
+</ul>
+</li>
+<li>Enjoy freshly made pancakes with cream and strawberry jam; (30 mins break). Massage those feet!</li>
+<li>09:00 Hrs. Start hiking; hike for 2 hours (<span style="color:blue">8 miles done</span>)</li>
+<li>11:00 Hrs. (15 mins break) Rest, and have a light lunch/snack</li>
+<li>11:20 Hrs. start hiking; hike for 1 hour (<span style="color:blue">10 miles done</span>)</li>
+<li>12:30 Hrs. rest for 30 mins; have lunch</li>
+<li>13:00 Hrs. hike for 2 hours (30 mins grace period) covering 1.5 miles and arrive at Nissanjåkk tent site (<span style="color:blue">10 miles done</span>)</li>
+<li>15:00 Hrs. Setup camp.
+<ul>
+<li>Tent near a water source (if possible; make sure you have 2L of water with you).
+<ul>
+<li>Rest and recover. Enjoy the sights and sounds.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="18-aug-day-6-plan-c">(18-aug) Day 6 (Plan C)</h3>
+<p>Target:    Get to Abisko --&gt; (Hike 3 miles / cumulative 70 miles)
+Timing:    Hiking for 3 Hrs
+Note:      Dry spell.
+Questions: None
+Details:</p>
+<ul>
+<li>Wake up at 05:00 Hrs</li>
+<li>Start hiking at 06:00 Hrs</li>
+<li>Check on water situation make sure you have at least 1L of water. If you have more than 1L, survive on snacks. You only have 3 miles to go.</li>
+<li>Hike for 1 hour. (<span style="color:blue">2 miles done</span>)</li>
+<li>08:00 Hrs. Take a quick break for final pictures etc.</li>
+<li>08:30 Hrs. Start hiking.</li>
+<li>Hike for 1 hour; reach Abisko (<span style="color:blue">1 miles done</span>)</li>
+</ul>
+
+</body>
+</html>

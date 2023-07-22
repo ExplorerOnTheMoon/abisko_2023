@@ -1,39 +1,98 @@
 # abisko hike
 
 - [abisko hike](#abisko-hike)
-  - [(13-aug) Day 1](#13-aug-day-1)
-  - [(14-aug) Day 2](#14-aug-day-2)
-  - [(15-aug) Day 3](#15-aug-day-3)
-  - [(16-aug) Day 4](#16-aug-day-4)
-  - [(17-aug) Day 5](#17-aug-day-5)
-  - [(17-aug) Day 5 (Plan B)](#17-aug-day-5-plan-b)
-    - [(18-aug) Day 6 (Plan B)](#18-aug-day-6-plan-b)
-  - [(17-aug) Day 5 (Plan C)](#17-aug-day-5-plan-c)
-    - [(18-aug) Day 6 (Plan C)](#18-aug-day-6-plan-c)
+  - [(13-aug) day 1 (sunday)](#13-aug-day-1-sunday)
+  - [(14-aug) day 2 (monday)](#14-aug-day-2-monday)
+  - [(15-aug) day 3 (tuesday)](#15-aug-day-3-tuesday)
+  - [(16-aug) day 4 (wednesday)](#16-aug-day-4-wednesday)
+  - [(17-aug) day 5 (thursday)](#17-aug-day-5-thursday)
+  - [(18-aug) day 6 (thursday)](#18-aug-day-6-thursday)
 
-## (13-aug) Day 1
+## (13-aug) day 1 (sunday)
 
-Target:    03 miles past Kebnekaise Station at 11.5 miles --> (<span style="color:blue">Hike: 10.5 miles, Ferry: 4 miles / cumulative 14.5 miles</span>)
-Timing:    Hiking (with boat ride) for 7 Hrs and 30 mins
-Note:      <span style="color:tomato">Hard last 3 miles</span>
-Questions: <span style="color:rgb(255,0,0)">Do I need to pay for the ferry at Lake Ladtojaure in cash (is it in SKR or USD)?</span>
-Details:
+```yaml
+target:
+  distance:
+    day: 
+      start: 0 miles
+      goal: 15.6 miles
+      breakdown:
+        hike: 12.6 miles
+        ferry: 3.0 miles
+    cumulative: 15.6 miles
+    landmarks / notes:
+      - lake ladtojaure at 3.1 miles
+      - kebnekaise station at 11.5 miles
+      - we are going 4 miles past the station
+      - hard last 4 miles
+      - ideal target is 16.5 miles
+      - ferry at lake ladtojaure in cash (not sure if skr or usd)
+      - 11.6 miles: kebnekaise station
 
-- Start at 07:30 Hrs.
-- Hike for 2 hours (<span style="color:blue">3 miles done</span>)
-  - 10:00 Hrs. - Reach Ferry by Lake Ladtojaure (<span style="color:MediumSeaGreen">30 mins of grace period as you might have to wait in the queue</span>)
-- End ferry at 10:30 Hrs. (<span style="color:blue">ferry saves 4 miles; 6 miles done</span>)
-- Hike for 2 hours (<span style="color:blue">10 miles done</span>)
-- Lunch at 12:00 Hrs.
-  - See if you can have a cold lunch (e.g. a packed sandwich that does not require heating water) (can even eat in rain that way)
-  - Massage legs and air out feet
-- Start hiking at 12:30 Hrs.; reach Kebnekaise Station by 15:30 Hrs. (<span style="color:blue">11.6 miles done</span>)
-  - Take a shower (if possible) and use the toilets (<span style="color:MediumSeaGreen">1-hour rest</span>)
-- Start hiking at 16:30 Hrs.; hike for 2 more hours (<span style="color:blue">14.5 miles done</span>)
-- Tent at 18:30 Hrs.
-  - Rest well; massage
+timing:
+  moving:
+    speed: 2 mph and then 1 mph
+    start: 07:30 Hrs
+    end: 06:00 Hrs
+    total: 2h + 2h + 1h + 2h = 7 hours
+  resting: 1h + 1h + 30m + 15m + 15m = 3h
 
-## (14-aug) Day 2
+details: |-
+  - 05:00 Hrs: --> wake up, shower, shave
+  - 05:45 Hrs: 🍽️ breakfast
+  - 06:30 Hrs: dynamic stretching, theragun
+  - 07:00 Hrs: 🚌 head out to Fjallraven Starting point for the bus
+  - 07:30 Hrs: 🚶‍♂️ start hiking (@2mph)
+  - 09:30 Hrs: === arrive at lake ladtojaure (day: 3 miles; total: 3 miles)
+  - 10:00 Hrs: # 30 mins of grace (you might have to wait in the queue)
+  - 10:30 Hrs: ⛵ end ferry (day: 6 miles; total: 6 miles) hike for 2 hours (@2mph)
+  - 12:30 Hrs: # (day: 10 miles; total: 10 miles) 🍽️ lunch + massage legs and air out feet (hope it's not raining!)
+  - 13:30 Hrs: 🚶‍♂️ hike: (@2mph)
+  - 14:30 Hrs: # === reach kebnekaise station (day: 11.6 miles; total: 11.6 miles) use toilet if necessary
+  - 15:00 Hrs: 🚶‍♂️ hike: (rough terrain begins) (@1mph)
+  - 17:00 Hrs: # (day: 13.6 miles; total: 13.6 miles) rest
+  - 17:15 Hrs: 🚶‍♂️ hike: (rough terrain) (@1mph) 
+  - 19:15 Hrs: # (day: 15.6 miles; total: 15.6 miles) rest
+  - 19:30 Hrs: 🚶‍♂️ hike: find a nice campsite (rough terrain) (@1mph)
+  - 20:00 Hrs: <-- finish for the day: tent, 🍽️ dinner, static stretch, rest, massage, sleep
+```
+
+## (14-aug) day 2 (monday)
+
+```yaml
+target:
+  distance:
+    day: 10 miles
+      start: 15.6 miles
+      goal: 10 miles
+    cumulative: 25.6 miles
+  landmarks / notes:
+    - get as close to Salka as possible
+    - 20 miles: singi checkpoint
+    - 27.6 miles: salka checkpoint
+
+timing:
+  moving:
+    speed: 1 mph to 1.5 mph
+    start: 06:00 Hrs
+    end: 05:00 Hrs
+    total: 2h + 2h + 1h30m + 2h + 1h15m = 8h45m
+  resting: 30m + 30m + 1h + 15m = 2h15m
+
+details: |-
+  - 05:00 Hrs: --> wakeup, 🍽️ cook breakfast in cozy, pack tent, dynamic stretch
+  - 06:00 Hrs: 🚶‍♂️ hike: (rough terrain): (@1mph)
+  - 08:00 Hrs: # (day: 2 miles; total: 17.6 miles) rest
+  - 08:30 Hrs: 🚶‍♂️ hike: (rough terrain): (@1mph)
+  - 10:30 Hrs: # (day: 4 miles; total: 19.6 miles) rest
+  - 11:00 Hrs: 🚶‍♂️ hike: (rough terrain): (@1mph)
+  - 12:30 Hrs: # === (day: 5.5 miles; total: 21.1 miles) reach singi checkpoint, 🍽️ lunch + rest
+                  - Flatbread with wild mushrooms, mashed potatoes, and jam
+  - 13:30 Hrs: 🚶‍♂️ hike: (rough terrain): (@1.5mph)
+  - 15:30 Hrs: # (day: 8.5 miles; total: 24.1 miles) rest
+  - 15:45 Hrs: 🚶‍♂️ hike: (rough terrain): (@1.5mph)
+  - 17:00 Hrs: <-- (day: 10 miles; total: 25.6 miles) tent, 🍽️ dinner, static stretch, rest, massage, sleep
+```
 
 Target:    Get as close to Salka as possible --> (<span style="color:blue">Hike 12 miles / cumulative 26.5 miles</span>)
 Timing:    Hiking for 9 Hrs.
@@ -55,152 +114,163 @@ Details:
 - Tent at 17:00 Hrs.
   - Rest well; massage
 
-## (15-aug) Day 3
+## (15-aug) day 3 (tuesday)
 
-Target:    Get past Salka Checkpoint, past Tjajkapasset, past Tjakja Checkpoint --> (Hike 14 miles / cumulative 40.5 miles)
-Timing:    Hiking for 9 Hrs
-Note:      Longest and steepest hiking today. Descend after mile 33.
-Questions: None
-Details:
+```yaml
+target:
+  distance:
+    day:
+      start: 25.6 miles
+      goal: 11.0 miles
+    cumulative: 36.6 miles
+  landmarks:
+    - 27.6 miles: salka checkpoint (outhouses available; shop available with crackers & soda; freshwater streams)
+    - 33.1 miles: tjaktjapass
+      - temperature drops around tjaktjapass
+    - 36.1 miles: tjaktja checkpoint
+    - 43.0 miles: alesjaure checkpoint
+  notes:
+    - Longest and steepest hiking today. Descend after mile 33.
 
-- Wake up at 05:00 Hrs
-- Start hiking at 06:00 Hrs
-- Hike for 30 mins and hit Salka Checkpoint (<span style="color:blue">27.3-mile marker; 0.8 miles done</span>) (Will start getting colder)
-- Hike for 2 hours and 30 mins and arrive at Tjajkapasset (pre-Tjajka checkpoint) (<span style="color:blue">33.3-mile marker;  6 miles done</span>)
-- Rest for 1 hour; it's now 10:00 Hrs. Massage your feet! (get ready for descent and boulder fields)
-- Hike for 2 hours; reach Tjajka Checkpoint by 12:00 Hrs. (<span style="color:blue">36-mile marker; 9 miles done</span>)
-- Lunch break for 1 hour. (enjoy Coffee and Carrot Cake)
-- Start hiking at 13:00 Hrs.
-- Hike for 4 more hours (with a 1-hour rest in there for pics etc) covering 5.5 miles (<span style="color:blue">14 miles done</span>)
-- Tent at 17:00
-  - Rest well; massage
+timing:
+  moving:
+    speed: 2 mph and then 1 mph to 1.5 mph
+    start: 06:00 Hrs
+    end: 05:00 Hrs
+    total: 2h + 2h + 1h30m + 2h + 1h + 30m = 9h
+  resting: 1h15m + 30m + 30m + 30m = 2h45m
 
-## (16-aug) Day 4
+details: |-
+  - 05:00 Hrs: --> wakeup, no breakfast; just energy bars, pack tent, dynamic stretch
+  - 05:45 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@2mph)
+  - 06:45 Hrs: # === (day: 2 miles; total: 27.6 miles) reached salka; sauna + heavy breakfast + rest + water refill
+  - 08:00 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@2mph)
+  - 10:00 Hrs: # (day: 6 miles; total: 31.6 miles) rest
+  - 10:30 Hrs: 🚶‍♂️ hike: (rough terrain) (@1mph)
+  - 12:30 Hrs: # === (day: 7.5 miles; total: 33.1 miles) reach tjaktjapass, 🍽️ lunch + rest
+  - 13:30 Hrs: 🚶‍♂️ hike: (downhill + tough terrain): (@1mph)
+  - 15:30 Hrs: # (day: 9.5 miles; total: 35.1 miles) rest
+  - 16:00 Hrs: 🚶‍♂️ hike: (downhill + rough terrain): (@1 mph)
+  - 17:00 Hrs: # === (day: 10.1 miles; total: 36.1 miles) reach tjaktja checkpoint rest, 🍽️ snacks (coffee + carrot cake + hot sandwiches if available) (plan on having tea :))
+  - 17:30 Hrs: 🚶‍♂️ hike: (downhill + rough terrain): (@1 mph) at least a mile to find a nice campsite (rough terrain)
+  - 18:30 Hrs: <-- tent, 🍽️ dinner, static stretch, rest, massage, sleep
+```
 
-Target:    Get past Alesjaure Checkpoint; & halfway / just before Kieron Checkpoint --> (Hike 11 miles, Ferry 3.5 miles / cumulative 55 miles)
-Timing:    Hiking for 8 Hrs
-Note:      Easy hiking.
-Questions: Do I need to pay for the ferry in cash (is it in SKR or USD)?
-Details:
+## (16-aug) day 4 (wednesday)
 
-- Wake up at 05:00 Hrs
-- Start hiking at 06:00 Hrs
-- Hike for 2 hours and hit Alesjaure Checkpoint (<span style="color:blue">43-mile marker; 2.5 miles done</span>)
-  - Buy snacks and soda
-  - Sauna + icy rinse in the river + hot water bath
-  - Fresh pair of undies!
-  - Spend 1 hour 30 mins over here
-- 10:00 take the boat for 5.7 km (<span style="color:blue">3.5 miles on the boat; 6 miles done</span>)
-- 11:00 offboard from the boat
-- Hike for 2 hours (<span style="color:blue">10 miles done</span>)
-- 13:00 Hrs; take lunch. Dip feet in a stream and massage those feet!
-- Start hiking at 14:00 Hrs; hike for 2 more hours (<span style="color:blue">14 miles done</span>)
-- Rest for 30 mins or spend time taking pics etc
-- Hike for 30 more mins for about 0.5 miles (<span style="color:blue">55-mile marker; 14.5 miles done</span>)
-- Stay before Kieron. There is no camping allowed after Kieron.
-- Tent at 17:00
-  - Rest well; massage
+```yaml
+target:
+  distance:
+    day:
+      start: 36.6 miles
+      goal: 16.0 miles
+      breakdown:
+        hike: 13.0 miles
+        ferry: 3.5 miles
+    cumulative: 52.6 miles
+  landmarks:
+    - 43.0 miles: alesjaure checkpoint (ferry over here)
+    - 60.1 miles: kieron checkpoint
+  notes:
+    - easy hiking
+    - snacks and soda available at alesjaure checkpoint
+    - sauna + icy ince in river + hot water bath at alesjaure checkpoint
+    - stay before kieron; no camping allowed after kieron (except at nissunjakk with is 3 miles before finish)
 
-## (17-aug) Day 5
+timing:
+  moving:
+    speed: 2 mph / 1.5 mph
+    start: 06:00 Hrs
+    end: 05:00 Hrs
+    total: 2h + 2h + 2h + 1h = 7h
+  resting: 30m + 2h + 30m = 3h
 
-Target:    Get past Kieron Checkpoint, past Abisko National Park & to Abisko --> (Hike 14.5 miles / cumulative 70 miles)
-Timing:    Hiking for 8 Hrs
-Note:      Dry spell.
-Questions: What if there is an emergency and I need to set up camp?
-Details:
+details: |-
+  - 05:00 Hrs: --> wakeup, 🍽️ breakfast, pack tent, dynamic stretch
+  - 06:00 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@2mph)
+  - 08:00 Hrs: # (day: 4 miles; total: 40.6 miles) rest + water refill
+  - 08:30 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@1.5mph)
+  - 10:30 Hrs: # === (day: 7 miles; total: 43.6 miles) reach alesjaure checkpoint; sauna + bath + relax + recuperate + lunch
+  - 12:30 Hrs: ⛵ take ferry to save 3.5 miles
+  - 13:00 Hrs: end ferry (day: 10.5 miles; total: 47.1 miles)
+  - 13:15 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@2mph)
+  - 15:15 Hrs: # (day: 14.5 miles; total: 51.1 miles) rest + water refill
+  - 15:45 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@1.5mph)
+  - 16:45 Hrs: # (day: 16.0 miles; total: 52.6 miles) find a nice campsite
+  - 17:00 Hrs: <-- tent, dinner, static stretch, rest, massage, sleep
+```
 
-- Wake up at 05:00 Hrs
-- Start hiking at 06:00 Hrs
-- Dry patch coming up. Hydrate!
-  - Fill up 2L of water + 1L in the BeFree bladder
-- Hike for 2 hours to reach Kieron Checkpoint at 08:30 Hrs. (30 mins grace period for pics etc) (<span style="color:blue">60-mile marker; 4 miles done</span>)
-  - Turn right at the sign towards the bridge; the checkpoint is at the end of a steep descent & past the bridge.
-- Enjoy freshly made pancakes with cream and strawberry jam; (30 mins break). Massage those feet!
-- 09:00 Hrs. Start hiking; hike for 2 hours (<span style="color:blue">8 miles done</span>)
-- 11:00 Hrs. rest, and have a light lunch/snack
-- 12:00 Hrs. start hiking; hike for 2 hours (<span style="color:blue">12 miles done</span>)
-- 14:00 Hrs. rest for 30 mins
-- 14:30 start hiking for 2 hours (30 mins grace) (<span style="color:blue">14.5 miles done; all done!</span>)
+## (17-aug) day 5 (thursday)
 
-## (17-aug) Day 5 (Plan B)
+```yaml
+target:
+  distance:
+    day:
+      start: 52.6 miles
+      goal: 6.5 miles
+      breakdown:
+        hike: 6.5 miles
+    cumulative: 59.5 miles
+  landmarks / notes:
+    - 60.1 miles: kieron checkpoint
+    - 61.5 miles: abiskojaure station
+    - 70.0 miles: abisko checkpoint (finish)
 
-The plan kicks in if we don't get accomodation at Abisko on the night of the 17th. In this case, we assume that we will have civil twilight in the am from 02:40 Hrs.
+timing:
+  moving:
+    speed: 2 mph
+    start: 06:00 Hrs
+    end: 05:00 Hrs
+    total: 2h + 2h + 2h + 1h = 7h
+  resting: 30m + 2h + 30m = 3h
 
-Target:    Get past Kieron Checkpoint, past Abisko National Park & to Abisko --> (Hike 4 miles / cumulative 59 miles)
-Timing:    Hiking for 2 Hrs
-Note:      Dry spell.
-Questions: What if there is an emergency and I need to set up camp?
-Details:
+details: |-
+  - 07:00 Hrs: --> wakeup, 🍽️ breakfast, pack tent, dynamic stretch
+  - 08:00 Hrs: 🚶‍♂️ hike: (chillax): (@1.5mph)
+  - 10:00 Hrs: # (day: 3 miles; total: 55.6 miles) rest + water refill
+  - 11:00 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@1mph)
+  - 12:30 Hrs: # === (day: 4 miles; total: 56.6 miles) pick an awesome location for lunch 🍽️
+  - 13:30 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@1.5mph)
+  - 15:30 Hrs: # === (day: 6.5 miles; total: 59.5 miles) reach just before kieron checkpoint
+  - 16:00 Hrs: <-- tent, dinner, static stretch, rest, massage, sleep **NEXT TO WATER** (pack 3L of water)
+```
 
-- Wake up at whenever, rest relax and recuperate. Take a cool dip at one of those cool streams. Cleanup; have a chilled out breakfast.
-- Rest till 10:00 Hrs.
-- Start hiking at 10:30 Hrs. and hike for 3 miles (1 mile before Kieron checkpoint). (<span style="color:blue">59-mile marker; 3 miles done</span>)
-- Tent near a water source.
-  - Rest the whole day till the evening at 02:00 Hrs on the 18-Aug-2023.
+## (18-aug) day 6 (thursday)
 
-### (18-aug) Day 6 (Plan B)
+```yaml
+target:
+  distance:
+    day:
+      start: 59.5 miles
+      goal: 10.5 miles
+      breakdown:
+        hike: 10.5 miles
+    cumulative: 70 miles
+  landmarks / notes:
+    - 60.1 miles: kieron checkpoint
+    - 61.5 miles: abiskojaure station
+    - 70.0 miles: abisko checkpoint (finish)
+  notes:
+    - civil twilight after 02:40 Hrs.
 
-The plan kicks in if we don't get accomodation at Abisko on the night of the 17th. In this case, we assume that we will have civil twilight in the am from 3:00 Hrs.
+timing:
+  moving:
+    speed: 2 mph
+    start: 06:00 Hrs
+    end: 05:00 Hrs
+    total: 2h + 2h + 2h + 1h = 7h
+  resting: 30m + 2h + 30m = 3h
 
-Target:    Get past Kieron Checkpoint, past Abisko National Park & to Abisko --> (Hike 12 miles / cumulative 70 miles)
-Timing:    Hiking for 8 Hrs
-Note:      Dry spell.
-Questions: What if there is an emergency and I need to set up camp?
-Details:
-
-- Wake up at 2:00 Hrs. Have a great breakfast. Potty!
-- Dry patch coming up. Hydrate!
-  - Fill up 2L of water + 1L in the BeFree bladder (Nautical Twilight)
-- Start hiking at 03:20 Hrs (Civil Twilight at 03:26 Hrs.)
-- Hike for 30 mins to reach Kieron Checkpoint at 04:00 Hrs. (15 mins grace period for pics etc) (<span style="color:blue">60-mile marker; 1 mile done</span>)
-  - Turn right at the sign towards the bridge; the checkpoint is at the end of a steep descent & past the bridge.
-- *Do not - Enjoy freshly made pancakes with cream and strawberry jam; (30 mins break). Massage those feet!*
-- 04:30 Hrs. Hike for 2 hours covering 4 miles (15 mins grace)
-- 06:45 Hrs. Rest, and have a light lunch/snack (<span style="color:blue">64-mile marker; 5 miles done</span>)
-- 07:00 Hrs. Start hiking; hike for 2 hours covering 3 miles (15 mins grace)
-- 09:00 Hrs. Rest for 15 mins (<span style="color:blue">67-mile marker; 8 miles done</span>)
-- 09:15 Hrs. Start hiking for 2 hours (30 mins grace)(<span style="color:blue">4 miles to go!</span>)
-- 11:15 Hrs. The end!(<span style="color:blue">12 miles done; all done!</span>)
-
-## (17-aug) Day 5 (Plan C)
-
-The plan kicks in if we don't get accomodation at Abisko on the night of the 17th. This can also be used if we have water at Nissanjåkk in Abisko National Park.
-In this case, we assume that we can hike in civil twilight in the am from 3:00 Hrs.
-
-Target:    Get past Kieron Checkpoint, past Abisko National Park & to Abisko --> (Hike 11.5 miles / cumulative 67 miles)
-Timing:    Hiking for 8 Hrs
-Note:      Dry spell.
-Questions: What if there is an emergency and I need to set up camp?
-Details:
-
-- Wake up at 05:00 Hrs
-- Start hiking at 06:00 Hrs
-- Dry patch coming up. Hydrate!
-  - Fill up 3L of water + 1L in the BeFree bladder
-- Hike for 2 hours to reach Kieron Checkpoint at 08:30 Hrs. (30 mins grace period for pics etc) (<span style="color:blue">60-mile marker; 4 miles done</span>)
-  - Turn right at the sign towards the bridge; the checkpoint is at the end of a steep descent & past the bridge.
-- Enjoy freshly made pancakes with cream and strawberry jam; (30 mins break). Massage those feet!
-- 09:00 Hrs. Start hiking; hike for 2 hours (<span style="color:blue">8 miles done</span>)
-- 11:00 Hrs. (15 mins break) Rest, and have a light lunch/snack
-- 11:20 Hrs. start hiking; hike for 1 hour (<span style="color:blue">10 miles done</span>)
-- 12:30 Hrs. rest for 30 mins; have lunch
-- 13:00 Hrs. hike for 2 hours (30 mins grace period) covering 1.5 miles and arrive at Nissanjåkk tent site (<span style="color:blue">10 miles done</span>)
-- 15:00 Hrs. Setup camp.
-  - Tent near a water source (if possible; make sure you have 2L of water with you).
-    - Rest and recover. Enjoy the sights and sounds.
-
-### (18-aug) Day 6 (Plan C)
-
-Target:    Get to Abisko --> (Hike 3 miles / cumulative 70 miles)
-Timing:    Hiking for 3 Hrs
-Note:      Dry spell.
-Questions: None
-Details:
-
-- Wake up at 05:00 Hrs
-- Start hiking at 06:00 Hrs
-- Check on water situation make sure you have at least 1L of water. If you have more than 1L, survive on snacks. You only have 3 miles to go.
-- Hike for 1 hour. (<span style="color:blue">2 miles done</span>)
-- 08:00 Hrs. Take a quick break for final pictures etc.
-- 08:30 Hrs. Start hiking.
-- Hike for 1 hour; reach Abisko (<span style="color:blue">1 miles done</span>)
+details: |-
+  - 02:00 Hrs: --> wakeup, pack tent, dynamic stretch
+  - 02:30 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@2mph)
+                - Turn right at the sign towards the bridge; the checkpoint is at the end of a steep descent & past the bridge.
+  - 03:00 Hrs: # === (day: 0.5 miles; total: 60.1 miles) reach kieron checkpoint; breakfast 🍽️
+                - Enjoy freshly made pancakes with cream and strawberry jam; (30 mins break). Massage those feet!
+  - 03:30 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@2mph)
+  - 05:30 Hrs: # (day: 4.5 miles; total: 64.0 miles) rest
+  - 06:00 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@2mph)
+  - 08:00 Hrs: # (day: 8.5 miles; total: 68.0 miles) rest
+  - 08:30 Hrs: 🚶‍♂️ hike: (terrain isn't too bad): (@1.5mph)
+  - 10:00 Hrs: --> (day: 10.5 miles; total: 70.0 miles) end hike
+```
