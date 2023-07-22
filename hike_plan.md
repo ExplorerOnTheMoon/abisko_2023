@@ -94,26 +94,6 @@ details: |-
   - 17:00 Hrs: <-- (day: 10 miles; total: 25.6 miles) tent, 🍽️ dinner, static stretch, rest, massage, sleep
 ```
 
-Target:    Get as close to Salka as possible --> (<span style="color:blue">Hike 12 miles / cumulative 26.5 miles</span>)
-Timing:    Hiking for 9 Hrs.
-Note:      <span style="color:tomato">Hard first 5.5 miles.</span><span style="color:MediumSeaGreen">(The more you cover here, the better; min 1/2 way to Salka; the closer, the better)</span>
-Questions: None
-Details:
-
-- Wake up at 05:00 Hrs.
-- Start hiking at 06:00 Hrs.
-- Hike the hard miles in 3.5 to 4 hours (<span style="color:blue">5.5 miles done</span>)
-- 2 hours and 30 mins to enjoy the scenery wherever you need to!
-- Reach Singi Checkpoint by 12:00 Hrs. (<span style="color:blue">5.8 miles done</span>)
-  - Eat some stuff if they provide it (Flatbread with wild mushrooms, mashed potatoes, and jam)
-  - Lunch at Singi; only 6 miles to go for the day
-  - Rest at Singi for 1 hour; massage your feet and ankles
-- Start hiking by 13:00 Hrs.
-- Hike for 3 more hours and see how much you can cover (<span style="color:blue">12 miles done</span>)
-- 2 hours to enjoy the scenery wherever you need to!
-- Tent at 17:00 Hrs.
-  - Rest well; massage
-
 ## (15-aug) day 3 (tuesday)
 
 ```yaml
